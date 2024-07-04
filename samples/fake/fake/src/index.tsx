@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import * as D from "./data";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import "./index.css";
 
 const children = D.makeArray(10).map((notUsed, index) => (
   <div key={index}>
@@ -13,7 +14,8 @@ const children = D.makeArray(10).map((notUsed, index) => (
   </div>
 ));
 
-const rootvirtualDOM = <div>{children}</div>;
+// const rootvirtualDOM = <div>{children}</div>;
+const rootvirtualDOM = <App />;
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
