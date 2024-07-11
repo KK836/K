@@ -14,50 +14,149 @@
 
 // import { Component } from "react";
 // import ClassComponent from "./ClassComponent";
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       <ul>
+//         <ClassComponent href="http://www.google.com" text="go to google" />
+//         <ClassComponent href="http://www.x.com" text="go to x(twitter)" />
+//       </ul>
+//     );
+//   }
+// }
+
+// import { Component } from "react";
+// import ClassComponent from "./ClassComponent";
 // import ArrowComponent from "./ArrowComponent";
-// export type ClassComponentProps = {
-//   href: string;
-//   text: String;
-// };
+// import P from "./P";
+
+// export default function App() {
+//   return <div>Hello function-keyword component!</div>;
+// }
 
 // const App = () => {
 //   return (
 //     <ul>
-//       <ClassComponent href="http://www.goolge.com" text="go to google" />
-//       <ArrowComponent href="http://www.x.com" text="go to x(twitter)" />
+//       <ClassComponent href="http://www.google.com" text="go to google" />
+//       <ArrowComponent href="http://www.X.com" text="go to X(twitter)" />
 //     </ul>
 //   );
 // };
 
 // const App = () => {
 //   // refactoring map 함수 사용
-//   // [...].map(item, index))=> <tag> )
+//   // [...].map((item, index)=> <tag>)
+//   // const texts = [<p key="1">hello</p>, <p key="2">world</p>];
+//   // const texts = ["hello", "world"].map((item, index) => (<p key={index} >{item}</p>));
+//   // const texts = ["hello", "world"].map((item, index) => (
+//   //   <p key={index} children={item} />
+//   // ));
 //   const texts = ["hello", "world"].map((item, index) => (
-//     <p key={index} children={item}></p>
+//     <P key={index} children={item} />
 //   ));
-//   // const texts = [<p>hello</p>, <p>world</p>];
 //   return <div children={texts} />;
 // };
 
 // export default App;
 
 // event 처리 부분
+// import EventLisner from "./pages/EventListner";
+// import OnClick from "./pages/OnClick";
+// import ReactOnClick from "./pages/ReactOnClick";
+// import DispatchEvent from "./pages/DispatchEvent";
+// import EventBubbling from "./pages/EventBubbling";
+// import StopPropagation from "./pages/StopPropagation";
+// import VariousInputs from "./pages/VariousInputs";
+// import OnChange from "./pages/OnChange";
+// import FileInput from "./pages/FileInput";
+// import DragDrop from "./pages/DragDrop";
+// import FileDrop from "./pages/FileDrop";
 
-import Bootstrap from "./pages/Bootstrap";
-import Icon from "./pages/Icon";
-import Style from "./pages/Styles";
-// import Style from "./pages/Style";
-// import UsingIcon from "./pages/UsingIcon";
-// import UsingIconWithCSSClass from "./pages/UsingIconWithCSSClass";
+// export default function App() {
+//   return (
+//     <div>
+//       <FileDrop />
+//       <DragDrop />
+//       <FileInput />
+//       <OnChange />
+//       <VariousInputs />
+//       <StopPropagation />
+//       <EventBubbling />
+//       <DispatchEvent />
+//       <ReactOnClick />
+//       <OnClick />
+//       <EventLisner />
+//     </div>
+//   );
+// }
 
-export default function App() {
+// import Bootstrap from "./pages/Bootstrap";
+// import Icon from "./pages/Icon";
+// import Style from "./pages/Styles";
+
+// // import UsingIcon from './pages/UsingIcon';
+// // import UsingIconWithCSSClass from './pages/UsingIconWithCSSClass';
+
+// export default function App() {
+//   return (
+//     <div>
+//       {/* <UsingIconWithCSSClass />
+//       <UsingIcon />
+
+//        */}
+//       <Style />
+//       <Icon />
+//       <Bootstrap />
+//     </div>
+//   );
+// }
+
+//import Tailwindcss from "./pages/Tailwindcss";
+// import Color from "./pages/Color";
+// import TextsTest from "./pages/TextsTest";
+
+// export default function App() {
+//   return (
+//     <div>
+//       <TextsTest />
+//       <Color />
+//       <Tailwindcss />
+//     </div>
+//   );
+// }
+
+import AvatarTest from "./pages/AvatarTest";
+import BackgroundImageTest from "./pages/BackgroundImageTest";
+import BorderTest from "./pages/BorderTest";
+import DisplayNoneTest from "./pages/DisplayNoneTest";
+import DisplayTest from "./pages/DisplayTest";
+import DivTest from "./pages/DivTest";
+import HeightTest from "./pages/HeightTest";
+import ImageTest from "./pages/ImageTest";
+import MarginTest from "./pages/MarginTest";
+import OverlayTest from "./pages/OverlayTest";
+import PaddingTest from "./pages/PaddingTest";
+import PositionTest from "./pages/PositionTest";
+import ViewportTest from "./pages/ViewportTest";
+
+function App() {
   return (
-    <div>
-      {/* <UsingIconWithCSSClass />
-    <UsingIcon /> */}
-      <Style />
-      <Icon />
-      <Bootstrap />
-    </div>
+    <main>
+      <DivTest />
+      <ViewportTest />
+      <HeightTest />
+      <PaddingTest />
+      <MarginTest />
+      <ImageTest />
+      <BackgroundImageTest />
+      <DisplayTest />
+      <DisplayNoneTest />
+      <AvatarTest />
+      <BorderTest />
+      <PositionTest />
+      <OverlayTest />
+    </main>
   );
 }
+export default App;

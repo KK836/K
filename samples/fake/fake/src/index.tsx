@@ -4,6 +4,7 @@ import * as D from "./data";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
+// import "@fontsource/material-icons";
 
 const children = D.makeArray(10).map((notUsed, index) => (
   <div key={index}>
