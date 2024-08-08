@@ -6,9 +6,12 @@ const session = require("express-session");
 const nunjucks = require("nunjucks");
 const dotenv = require("dotenv");
 const passport = require("passport");
+const pageRouter = require("./routes/page");
+const authRouter = require("./routes/auth");
+const postRouter = require("./routes/post");
+const userRouter = require("./routes/user");
 const { sequelize } = require("./models");
 const passportConfig = require("./passport");
-
 dotenv.config();
 const routes = require("./routes");
 
@@ -32,8 +35,10 @@ sequelize
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+app.use("/img", express.static(path.join(__dirname, "uploads")));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(
   session({

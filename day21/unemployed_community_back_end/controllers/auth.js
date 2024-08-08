@@ -29,6 +29,7 @@ exports.login = (req, res, next) => {
       return next(authError);
     }
     if (!user) {
+      res.redirect("/?loginError=${info.message}");
       return res.redirect(`/?loginError=${info.message}`);
     }
     return req.login(user, (loginError) => {
@@ -41,6 +42,24 @@ exports.login = (req, res, next) => {
   })(req, res, next);
 };
 
-exports.logout = (req, res, next) => {
-  return next();
+exports.logout = async (req, res, next) => {
+  try {
+    const ACCESS_TOKEN = res.locals.user.accessToken;
+    let logout = await axios({
+      method: "post",
+      url: "https://kapi.kakao.com/v1/user/unlink",
+      headers: {
+        Authorization: `Bearer ${ACCESS_TOKEN}`,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    res.json(error);
+  }
+  // 세션정리
+  req.logout();
+  req.session.destroy();
+  res.redirect("/");
+
+  // return next();
 };

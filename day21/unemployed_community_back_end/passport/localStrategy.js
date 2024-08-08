@@ -26,8 +26,8 @@ module.exports = () => {
             done(null, false, { message: "가입되지 않는 회원입니다" });
           }
         } catch (error) {
-          console.log(error);
-          done(error);
+          console.error(error);
+          return next(error);
         }
       }
     )

@@ -16,7 +16,7 @@ try {
 }
 
 const upload = multer({
-  storage: multer.diskStrorage({
+  storage: multer.diskStorage({
     destination(req, file, cb) {
       cb(null, "uploads/");
     },

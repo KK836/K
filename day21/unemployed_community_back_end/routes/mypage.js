@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { renderProfile } = require("../controllers/mypage");
-
 const { isLoggedIn, isNotLoggedIn } = require("../middlewares");
 
 router.use((req, res, next) => {
